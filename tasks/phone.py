@@ -17,3 +17,33 @@
 Модель: {}
 Год выпуска: {}
 """
+
+
+class Phone:
+    brand: str
+    model: str
+    issue_year: int
+
+    def __init__(self, brand, model, issue_year):
+        self.brand = brand
+        self.model = model
+        self.issue_year = issue_year
+
+    def __str__(self):
+        print(f"Модель: {self.model}")
+        print(f"Бренд: {self.brand}")
+        print(f"Год выпуска: {self.issue_year}")
+
+    def get_info(self):
+        return self.brand, self.model, self.issue_year
+
+    def receive_call(self, name):
+        self.name = name
+        print(f"Звонит {name}")
+
+
+my_phone = Phone('Iphone', '11', 2020)
+
+my_phone.__str__()
+print(my_phone.get_info())
+my_phone.receive_call("Vovan")
